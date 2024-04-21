@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title></title>
     <meta charset="UTF-8">
     <link rel="icon" href="data:;base64,iVBORwOKGO=" />
     <link rel="stylesheet" href="css/style.css">
+    <!-- Include PapaParse library for CSV parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.0.2/papaparse.min.js"></script>
 </head>
+
 <body>
-    <!-- Add HTML content, SVG drawing area, ... -->
-    <svg></svg>
-    
+
+    <!-- Add HTML content and SVG drawing area -->
+    <div class="header">
+        <h1>Total Polutan di Seluruh Dunia</h1>
+    </div>
+    <div class="svg-cointainer">
+        <svg id="pie-chart"></svg>
+        <svg id="other-pie-chart"></svg>
+    </div>
+
     <!-- D3 bundle -->
     <script src="js/d3.v7.min.js"></script>
 
-    <!-- Our JS code -->
-    <script src="js/main.js"></script>
+    <!-- JavaScript code for creating pie charts -->
+    <script src="js/pieChart.js"></script>
+    <!-- Uncomment the script below to see more complete calculation results. -->
+    <!-- See the results on the console -->
+    <!-- <script src="js/script.js"></script> -->
+
 </body>
+
 </html>
