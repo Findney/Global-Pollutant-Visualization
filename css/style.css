@@ -1,0 +1,35 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #0E0B16;
+}
+
+h1 {
+    padding-top: 10px;
+    color: lightgray;
+}
+
+#pie-chart, #other-pie-chart {
+    font-weight: bold;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative; 
+    z-index: 1; 
+}
+
+.svg-container {
+    display: flex;
+    flex-direction: column;
+    position: relative; 
+}
+
+#pie-chart, #other-pie-chart {
+    border: 1px solid lightslategray;
+    border-radius: 5%;
+    background-color: gray;
+    background-position: contain;
+    width: 50;
+}
