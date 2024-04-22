@@ -1,5 +1,4 @@
-# UAS-Prak-VisDat
-Final Project of Visualization Data Laboratory
+# Final Project of Visualization Data Laboratory
 
 Team members:
 1. Agil Mughni 2208107010025
