@@ -32,4 +32,8 @@ h1 {
     background-color: gray;
     background-position: contain;
     width: 50;
+
+.bar {
+    fill: steelblue;
+
 }
