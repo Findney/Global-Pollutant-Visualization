@@ -37,7 +37,8 @@ function calculatePollutantPercentage(csvText) {
     // Membuat array untuk polutan 'Other'
     const otherPolutanData = otherPolutanEntries.map(([polutan, total]) => ({
         polutan,
-        persentase: (total / totalKeseluruhan) * 100
+        persentase: (total / totalKeseluruhan) * 100,
+        jumlahPolutan: total // Menambahkan jumlah polutan
     }));
 
     // Menghapus polutan yang termasuk dalam kategori 'Other' dari totalJumlahPolutan
@@ -52,22 +53,13 @@ function calculatePollutantPercentage(csvText) {
     return {
         mainData: Object.entries(totalJumlahPolutan).map(([polutan, total]) => ({
             polutan,
-            persentase: (total / totalKeseluruhan) * 100
+            persentase: (total / totalKeseluruhan) * 100,
+            jumlahPolutan: total // Menambahkan jumlah polutan
         })),
         otherData: otherPolutanData
     };
-
-    // Menambahkan kategori 'Other' ke totalJumlahPolutan
-    totalJumlahPolutan['Other'] = otherPolutanTotal;
-
-    // Mengembalikan hanya kategori polutan utama dan 'Other'
-    return Object.entries(totalJumlahPolutan).map(([polutan, total]) => ({
-        polutan,
-        persentase: (total / totalKeseluruhan) * 100
-    }));
-
-
 }
+
 
 // Fungsi untuk membuat pie chart
 function createPieChart(data, svgSelector) {
@@ -145,9 +137,11 @@ function createPieChart(data, svgSelector) {
         .style('border', '1px solid #0E0B16')
         .style('border-radius', '4px')
         .style('padding', '8px')
-        .style('text-align', 'center')
+        .style('text-align', 'left')
         .style('font-size', '16px')
         .style('font-weight', '500')
+        .style('border', 'none')
+        .style('box-shadow', '2px 4px 8px rgba(0, 0, 0, 0.3)')
         .style('pointer-events', 'none'); // Memastikan tooltip tidak mengganggu interaksi mouse
 
     // Menambahkan path tanpa teks
@@ -158,8 +152,10 @@ function createPieChart(data, svgSelector) {
         .style('stroke', '#0E0B16')
         .style('stroke-width', '1px')
         .on('mouseover', function (event, d) {
+            const jumlahPolutan = d.data.jumlahPolutan.toFixed(2); // Memformat jumlah polutan dengan dua angka di belakang koma
+            const tooltipText = `${d.data.polutan}: ${d.data.persentase.toFixed(2)}% <br> Total: <span style="font-weight: bold">${jumlahPolutan}</span> µg/m³`; // Menggunakan <br> untuk baris baru
             tooltip.style('visibility', 'visible')
-                .text(`${d.data.polutan}: ${d.data.persentase.toFixed(2)}%`);
+                .html(tooltipText);
             d3.select(this)
                 .transition().duration(500)
                 .attr('d', hoverArc);
