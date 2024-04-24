@@ -1,4 +1,4 @@
-const URL_CSV = '../data/airQuality_out.csv';
+const URL_CSV = "../data/airQuality_out.csv";
 const SVG_SELECTOR = '#pie-chart';
 const OTHER_THRESHOLD = 2;
 const OTHER_PIECHART = '#other-pie-chart';
