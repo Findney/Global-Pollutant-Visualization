@@ -6,6 +6,7 @@ const OTHER_PIECHART = '#other-pie-chart';
 // Fungsi untuk mengambil data CSV
 async function fetchData(url) {
     try {
+        console.log(URL_CSV);
         const response = await fetch(url);
         if (!response.ok) {
             throw new Error('Failed to fetch data');
