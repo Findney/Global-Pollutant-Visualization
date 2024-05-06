@@ -6,6 +6,7 @@ Team members:
 3. Willy Jonathan Arsyad 2208107010037
 
 ## Results
+### Link: https://findney.github.io/Global-Pollutant-Visualization/
 ### Bar Chart
 ![Bar Chart](https://github.com/Findney/Global-Pollutant-Visualization/blob/main/img/bar_chart.png)
 
