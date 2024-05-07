@@ -5,6 +5,9 @@ Team members:
 2. Ahmad Syah Ramadhan 2208107010033
 3. Willy Jonathan Arsyad 2208107010037
 
+## Dataset
+### Kaggle: https://www.kaggle.com/code/diegocm338/world-air-quality-data-2024-eda
+
 ## Results
 ### Link: https://findney.github.io/Global-Pollutant-Visualization/
 ### Bar Chart
